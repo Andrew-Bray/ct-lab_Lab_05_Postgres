@@ -1,0 +1,6 @@
+CREATE TABLE kittycats (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    breed TEXT NOT NULL,
+    description TEXT,
+    url TEXT NOT NULL
+);
