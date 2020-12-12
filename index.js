@@ -1,9 +1,7 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const Kittycat = require('./lib/models/Kittycats.js');
 
-const PORT = 1234;
 app.use(express.json());
 
 
@@ -37,9 +35,5 @@ app.delete('/kittycats/:id', (req, res) => {
     .then(kittycats => res.send(kittycats));
 });
 
-
-app.listen(PORT, () => {
-    console.log(`started on PORT ${PORT}`);
-});
 
 module.exports = app;

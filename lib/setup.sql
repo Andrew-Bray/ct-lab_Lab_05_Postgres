@@ -4,3 +4,27 @@ CREATE TABLE kittycats (
     description TEXT,
     url TEXT NOT NULL
 );
+
+CREATE TABLE fishies (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    species TEXT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE gumballs (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    color TEXT NOT NULL,
+    flavor TEXT NOT NULL
+);
+
+CREATE TABLE mantis_shrimpies (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    species TEXT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE sorting_algorithms (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT
+);
