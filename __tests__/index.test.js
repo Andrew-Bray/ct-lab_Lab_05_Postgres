@@ -2,8 +2,17 @@ require('dotenv').config();
 const request = require('supertest');
 const app = require('../index.js');
 const Kitty = require('../lib/models/Kittycats');
+const pool = require('../lib/utils/pool');
+const fs = require('fs');
 
 describe ('app endpoints for cats', () => {
+  beforeEach(() => {
+    return pool.query(fs.readFileSync('./lib/setup.sql', 'utf-8'));
+  });
+
+  afterAll(() => {
+    return pool.end();
+  });
   it('responds with our added kittycat', async() => {
     const res = await request(app)
       .post('/kittycats')
